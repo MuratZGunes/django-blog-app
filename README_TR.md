@@ -121,6 +121,11 @@ http://127.0.0.1:8000/
 ![blogdashboard](https://github.com/user-attachments/assets/e4377118-77a9-4d89-b246-4add1582fb5d)
 
 ##
+
+### Makaleler Sayfası
+![blogarticles](https://github.com/user-attachments/assets/fe2c71c8-83e3-4e8e-ab65-9ad2e1e8bd0d)
+
+##
 ---
 Herhangi bir sorun veya öneriniz için benimle [GitHub](https://github.com/MuratZGunes/django-blog-app) üzerinden iletişime geçebilirsiniz!
 
