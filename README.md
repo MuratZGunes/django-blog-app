@@ -122,7 +122,7 @@ http://127.0.0.1:8000/
 
 ##
 
-### Articles
+### Articles Page
 
 ![blogarticles](https://github.com/user-attachments/assets/5b3ed0ea-c508-4c6d-86c4-2f3ff888bb50)
 
