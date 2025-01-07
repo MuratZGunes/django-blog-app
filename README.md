@@ -114,7 +114,7 @@ http://127.0.0.1:8000/
 
 ### Article Detail Page
 
-![blogdetailpage](https://github.com/user-attachments/assets/e8365a08-17a0-435d-acbb-70f9ac785395)
+![blgmdetail](https://github.com/user-attachments/assets/cf6cd959-34b6-4882-bd95-b5580810c1fe)
 
 
 ### Dashboard
