@@ -114,8 +114,7 @@ http://127.0.0.1:8000/
 
 ### Makale Detay Sayfası
 
-  ![blogdetailpage](https://github.com/user-attachments/assets/cd35a909-80b5-43ae-ad40-de5fc43e4f0e)
-
+![blgmdetail](https://github.com/user-attachments/assets/cd3b825f-5ea9-403d-9f55-c2b00ae55087)
 
 ### Kontrol Paneli
 ![blogdashboard](https://github.com/user-attachments/assets/e4377118-77a9-4d89-b246-4add1582fb5d)
