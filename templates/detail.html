@@ -1,0 +1,133 @@
+{% extends "layout.html" %} {% block body %}
+
+<div class="container mt-3">
+  <div class="row justify-content-center">
+    <div class="col-lg-12">
+      <!-- Post content-->
+      <div class="card shadow-lg border-0">
+        <div class="card-body">
+          <!-- Post header-->
+          <header class="mb-4">
+            <!-- Post title-->
+            <h1 class="card-title fw-bolder mb-3 text-center">
+              {{ article.title }}
+            </h1>
+            <!-- Post author-->
+            <div
+              class="fw-bold text-secondary mb-3 text-center"
+              style="font-size: 1.2em"
+            >
+              by {{ article.author.username }}
+            </div>
+            <!-- Post meta content-->
+            <div class="text-muted fst-italic mb-2 text-center">
+              {{ article.created_date }}
+            </div>
+            <hr />
+          </header>
+          <!-- Post content-->
+          <section class="mb-5">
+            <p class="fs-5 mb-4 text-justify">{{ article.content|safe }}</p>
+          </section>
+          {% if article.article_image %}
+          <hr />
+          <img
+            src="{{ article.article_image.url }}"
+            alt="Resim"
+            class="img-fluid mx-auto d-block"
+          />
+          <br />
+          {% else %} {% endif %}
+
+          <!-- Yorumlar Bölümü -->
+          <section class="mb-5">
+            <div class="card bg-light">
+              <div class="card-body">
+                <h5 class="card-title mb-3 text-center">
+                  <i class="fas fa-comments me-2"></i>Yorumlar
+                </h5>
+                <hr class="mb-4" />
+
+                <!-- Yorumlar -->
+                {% if comments %} {% for comment in comments %}
+                <div
+                  class="d-flex mb-4 p-3"
+                  style="
+                    background-color: #e3f2fd;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                  "
+                >
+                  <div class="flex-shrink-0">
+                    <img
+                      class="rounded-circle"
+                      src="https://via.placeholder.com/50"
+                      alt="User Avatar"
+                      style="border: 2px solid #007bff"
+                    />
+                  </div>
+                  <div class="ms-3">
+                    <div class="fw-bold text-primary">
+                      {{comment.comment_author}}
+                    </div>
+                    <p class="mb-1">{{comment.comment_content}}</p>
+                    <div class="text-muted fst-italic mt-2">
+                      {{comment.comment_date}}
+                    </div>
+                  </div>
+                </div>
+                {% endfor %} {% else %}
+                <div class="alert alert-info">
+                  Bu makaleye herhangi bir yorum yapılmamış, ilk yorumu yapan
+                  siz olun!
+                </div>
+                {% endif %}
+                <hr />
+                <!-- Yorum Formu -->
+                <form
+                  class="mb-4"
+                  action="{% url 'article:comment' article.id%}"
+                  method="POST"
+                >
+                  {% csrf_token %}
+                  <div class="mb-3">
+                    <label for="commentAuthor" class="form-label fw-semibold">
+                      <i class="fas fa-heading me-1"></i>İsminizi giriniz
+                    </label>
+                    <input
+                      name="comment_author"
+                      type="text"
+                      class="form-control border-0 shadow-sm"
+                      id="commentAuthor"
+                      placeholder="İsminizi girin..."
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="comment_content" class="form-label fw-semibold">
+                      <i class="fas fa-pen me-1"></i>Yorum Yaz
+                    </label>
+                    <textarea
+                      name="comment_content"
+                      id="comment_content"
+                      class="form-control border-0 shadow-sm"
+                      rows="3"
+                      placeholder="Bu konu hakkında düşüncelerinizi paylaşın..."
+                    ></textarea>
+                  </div>
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="submit" class="btn btn-primary shadow-sm">
+                      <i class="fas fa-paper-plane me-2"></i>Yorumu Gönder
+                    </button>
+                  </div>
+                </form>
+                <hr class="my-4" />
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}
