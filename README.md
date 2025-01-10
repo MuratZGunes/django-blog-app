@@ -66,6 +66,16 @@ Visit the application in your browser at:
 http://127.0.0.1:8000/
 ```
 
+### 8. SECRET_KEY Setup
+
+You need to create a `SECRET_KEY` for the project. Use the following command to generate a secure key:
+
+```bash
+python -c "import secrets; print(secrets.token_urlsafe(50))"
+```
+
+Paste the generated key into the `SECRET_KEY` variable in the `blog/settings.py` file
+
 ## Technologies Used
 
 - Django 5.1.4
