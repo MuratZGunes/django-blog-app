@@ -59,6 +59,16 @@ python manage.py collectstatic
 ```bash
 python manage.py runserver
 ```
+### 8. SECRET_KEY Ayarı
+
+Proje için bir `SECRET_KEY` oluşturmanız gerekmektedir. Aşağıdaki komutu kullanarak güvenli bir anahtar oluşturun:
+
+```bash
+python -c "import secrets; print(secrets.token_urlsafe(50))"
+```
+
+Oluşturduğunuz anahtarı `SECRET_KEY` değişkenine yapıştırın.
+
 
 Tarayıcınızdan uygulamayı şu adresten ziyaret edin:
 
